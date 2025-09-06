@@ -37,14 +37,7 @@ const NavBar = () => {
           <a href="#contact" className="link">Contact</a>
         </div>
 
-        <div className="auth-btn">
-          <div>
-            <button className="log">Log in</button>
-          </div>
-          <div>
-            <button className="sign">Sign Up</button>
-          </div>
-        </div>
+        
       </div>
     </div>
   );

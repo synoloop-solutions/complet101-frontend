@@ -1,17 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import LandingPage from './pages/landingpag'
-
-
-
+import { RouterProvider } from "react-router-dom";
+import router from './routes/route';
 function App() {
   return (
-    <>
-    <LandingPage />
-      
-    </>
-  )
+    <RouterProvider router={router} />
+  );
 }
 
-export default App
+
+
+export default App;

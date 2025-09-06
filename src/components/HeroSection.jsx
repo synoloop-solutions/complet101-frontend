@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/hero.css';
 import heroImage from '../assets/heroimage.jpg';
-import Card from './Learn';
+import Card from './card';
 import AgeModal from './modal';
 
 const HeroSection = () => {

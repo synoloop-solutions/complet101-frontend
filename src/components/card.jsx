@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/learn.css";
+import "../styles/card.css";
 
 // Example images (replace with your own URLs)
 import completImg from "../assets/complet.jpg";
@@ -39,9 +39,12 @@ const Cards = () => {
           <div className="card-content">
             <h3 className="card-title">{card.title}</h3>
             <p className="card-description">{card.description}</p>
-            <a href={card.link} className="card-button">
-              Learn More
-            </a>
+            
+                <a href={card.link} className="card-link">
+                    <div className="card-button" >Learn More</div>
+
+                </a>
+            
           </div>
         </div>
       ))}

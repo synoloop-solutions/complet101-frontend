@@ -173,3 +173,23 @@
   object-fit: cover;
   display: block;
 }
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .hero-container {
+    padding: 0 1rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+  }
+  
+  .trust-indicators {
+    gap: 1rem;
+    justify-content: center;
+  }
+}
