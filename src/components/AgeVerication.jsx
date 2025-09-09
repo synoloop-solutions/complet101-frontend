@@ -2,6 +2,8 @@ import React, { useState, useCallback } from "react";
 import PropTypes from "prop-types";
 import styles from "./AgeVerification.module.css";
 import CustomSelect from "./CustomSelect";
+import Button from "./Button";
+import Heading from "./Heading";
 
 /**
  * Age verification component with enhanced UX and validation
@@ -20,6 +22,8 @@ const AgeVerification = ({
 }) => {
   const [selectedAge, setSelectedAge] = useState(null);
   const [hasAttempted, setHasAttempted] = useState(false);
+
+  const [loading, setLoading] = useState(false);
 
   // Default messages with override capability
   const messages = {
@@ -46,6 +50,14 @@ const AgeVerification = ({
       isAdult: false,
     },
   ];
+
+  const handleContinue = async () => {
+    setLoading(true);
+    // Simulate API call
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    setLoading(false);
+    console.log("Continue clicked!");
+  };
 
   const handleAgeSelection = useCallback(
     (selectedOption) => {
@@ -74,9 +86,19 @@ const AgeVerification = ({
       aria-describedby="age-verification-description"
     >
       <div className={styles.content}>
-        <h2 id="age-verification-title" className={styles.title}>
+        <Heading
+          id="age-verification-title"
+          className={styles.title}
+          level="h3"
+          size="medium"
+          color=""
+          weight="bold"
+        >
           {messages.title}
-        </h2>
+        </Heading>
+        {/* <h2 id="age-verification-title" className={styles.title}>
+          {messages.title}
+        </h2> */}
 
         <p id="age-verification-description" className={styles.description}>
           {messages.description}
@@ -94,30 +116,38 @@ const AgeVerification = ({
             }
             aria-invalid={showError || !!error}
           />
+          {/* Error Messages */}
+          {(showError || error) && (
+            <div
+              id="age-verification-error"
+              className={styles.errorMessage}
+              role="alert"
+              aria-live="polite"
+            >
+              {error || messages.errorMessage}
+            </div>
+          )}
+
+          {/* Underage Message */}
+          {showUnderageMessage && (
+            <div
+              className={styles.underageMessage}
+              role="alert"
+              aria-live="polite"
+            >
+              <p>{messages.underageMessage}</p>
+            </div>
+          )}
         </div>
 
-        {/* Error Messages */}
-        {(showError || error) && (
-          <div
-            id="age-verification-error"
-            className={styles.errorMessage}
-            role="alert"
-            aria-live="polite"
-          >
-            {error || messages.errorMessage}
-          </div>
-        )}
-
-        {/* Underage Message */}
-        {showUnderageMessage && (
-          <div
-            className={styles.underageMessage}
-            role="alert"
-            aria-live="polite"
-          >
-            <p>{messages.underageMessage}</p>
-          </div>
-        )}
+        <Button
+          variant="primary"
+          size="large"
+          onClick={handleContinue}
+          loading={loading}
+        >
+          Continue
+        </Button>
 
         {/* Loading State */}
         {isLoading && (

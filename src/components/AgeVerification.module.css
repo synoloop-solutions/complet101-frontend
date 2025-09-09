@@ -1,27 +1,48 @@
-.ageverification {
-  font-size: 24px;
+.ageVerification {
+  font-size: 16px;
   color: #333;
   width: 100%;
-  height: 200px;
-  /* background-color: ; */
-  padding: 24px;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 
-  width: 80%;
-
-  border-radius: 10px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-
-.title {
-  margin-block-end: 16px;
-
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: 600;
+  font-family: "Lato", sans-serif;
 }
 
 .description {
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
+  color: var(--primary-color);
+}
+
+.title {
+  text-align: center;
+}
+
+.selectContainer {
+  margin-block-end: 24px;
+}
+
+.underageMessage {
+  font-size: 14px;
+  color: red;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+@media (min-width: 1200px) {
+  .ageVerification {
+    font-size: 24px;
+    padding: 24px;
+    width: 80%;
+  }
+
+  .title {
+    margin-block-end: 16px;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+  }
 }
