@@ -14,7 +14,9 @@ const NavBar = () => {
         <div className="logo">Complet101</div>
 
         <div className="links">
-          <a href="#about" className="link">About</a>
+          <a href="#about" className="link">
+            About
+          </a>
 
           {/* Products Dropdown */}
           <div
@@ -34,10 +36,10 @@ const NavBar = () => {
             )}
           </div>
 
-          <a href="#contact" className="link">Contact</a>
+          <a href="#contact" className="link">
+            Contact
+          </a>
         </div>
-
-        
       </div>
     </div>
   );

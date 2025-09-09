@@ -1,0 +1,133 @@
+/* Base heading styles */
+.heading {
+  margin: 0;
+  font-family: inherit;
+  line-height: 1.2;
+  color: inherit;
+}
+
+/* Size variants - independent of semantic level */
+.heading--large {
+  font-size: 48px;
+  margin-bottom: 26px;
+}
+
+.heading--medium {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.heading--small {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.heading--xlarge {
+  font-size: 64px;
+  margin-bottom: 32px;
+}
+
+.heading--xsmall {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+/* Color variants */
+.heading--primary {
+  color: #2677b2;
+}
+
+.heading--secondary {
+  color: #6b7280;
+}
+
+.heading--dark {
+  color: #1f2937;
+}
+
+.heading--light {
+  color: #ffffff;
+}
+
+.heading--success {
+  color: #059669;
+}
+
+.heading--warning {
+  color: #d97706;
+}
+
+.heading--danger {
+  color: #dc2626;
+}
+
+/* Weight variants */
+.heading--light {
+  font-weight: 300;
+}
+
+.heading--normal {
+  font-weight: 400;
+}
+
+.heading--medium {
+  font-weight: 500;
+}
+
+.heading--semibold {
+  font-weight: 600;
+}
+
+.heading--bold {
+  font-weight: 700;
+}
+
+.heading--extrabold {
+  font-weight: 800;
+}
+
+/* Alignment variants */
+.heading--left {
+  text-align: left;
+}
+
+.heading--center {
+  text-align: center;
+}
+
+.heading--right {
+  text-align: right;
+}
+
+.heading--justify {
+  text-align: justify;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .heading--xlarge {
+    font-size: 48px;
+  }
+
+  .heading--large {
+    font-size: 36px;
+  }
+
+  .heading--medium {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading--xlarge {
+    font-size: 36px;
+  }
+
+  .heading--large {
+    font-size: 28px;
+  }
+
+  .heading--medium {
+    font-size: 24px;
+  }
+}

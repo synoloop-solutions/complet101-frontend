@@ -1,0 +1,66 @@
+.heroSection {
+  padding: 128px 160px;
+}
+
+/* =================== */
+/* Logo Section */
+/* =================== */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-block-end: 48px;
+}
+
+.logoIcon {
+  width: 48px;
+  height: 48px;
+}
+
+.logoText {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* ====================== */
+/* Hero Text */
+/* ====================== */
+.content {
+  width: 35%;
+}
+.heroText {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--secondary-color);
+
+  margin-block-end: 26px;
+}
+
+.tagline {
+  font-size: 20px;
+
+  margin-block-end: 32px;
+  line-height: 1.5;
+  margin-block-end: 24px;
+}
+
+.description {
+  font-size: 16px;
+  color: var(--primary-color);
+  line-height: 1.5;
+  margin-block-end: 32px;
+}
+
+.demoVideo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--secondary-color);
+  text-decoration: none;
+
+  margin-block-end: 22px;
+}
