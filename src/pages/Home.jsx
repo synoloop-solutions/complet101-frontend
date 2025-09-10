@@ -6,13 +6,14 @@ import AgeVerication from "../components/AgeVerication";
 import Heading from "../components/Heading";
 import VideoModal from "../components/VideoModal";
 
-// import homeImage from "../assets/homeImg.png";
+import homeImage from "../assets/homeImg.png";
 
 const Home = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   // Temporary video URL for demo purposes
-  const videoUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+  const videoUrl =
+    "https://www.youtube.com/embed/44qF9XuYk9A?si=YYqEYy-3P5Do2V8r";
   // For Vimeo use: https://player.vimeo.com/video/your_video_id
   // For direct video files use the file URL: "path/to/your/video.mp4"
 
@@ -89,7 +90,7 @@ const Home = () => {
 
           {/* Hero Image Section */}
           <div className={styles.heroImageContainer}>
-            {/* <img src={homeImage} alt="Hero" className={styles.heroImage} /> */}
+            <img src={homeImage} alt="Hero" className={styles.heroImage} />
           </div>
         </div>
       </div>
