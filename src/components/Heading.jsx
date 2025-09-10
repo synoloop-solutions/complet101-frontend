@@ -22,7 +22,7 @@ const Heading = ({
   size = "large",
   color = "primary",
   weight = "bold",
-  align = "left",
+  align = "",
   marginBottom,
   className = "",
   style = {},
