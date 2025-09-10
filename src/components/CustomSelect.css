@@ -1,7 +1,7 @@
 .custom-select {
   margin-top: 14px;
   position: relative;
-  width: 80%;
+  width: 100%;
   font-family: "Inter", sans-serif;
 }
 
@@ -63,4 +63,10 @@
 
 .custom-option:hover {
   background-color: #f0f0f0;
+}
+
+@media (min-width: 1200px) {
+  .custom-select {
+    width: 80%;
+  }
 }
