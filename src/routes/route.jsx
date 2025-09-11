@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
-// import ServicesOverview from "../pages/Overview";
+import ServicesOverview from "../pages/Overview";
 import SafeGuard from "../pages/SafeGuard";
 import ServicesHub from "../pages/ServicesHub";
 // import Form from '../pages/form';
@@ -17,8 +17,12 @@ const router = createBrowserRouter([
   },
   {
     path: "/serviceshub",
-    element: <ServicesHub />,
+    element: <ServicesOverview />,
   },
+  {
+    path:"/serviceoverview",
+    element:<ServicesOverview/>
+  }
 ]);
 
 export default router;

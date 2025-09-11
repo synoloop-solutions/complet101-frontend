@@ -19,7 +19,7 @@ const Navigation = ({
   navItems = [
     { label: "Home", href: "/home", active: false },
     { label: "Services", href: "/services", active: true },
-    { label: "Overview", href: "/overview", active: false },
+    { label: "Overview", href: "/serviceoverview", active: false },
   ],
   showBackButton = true,
   onBackClick,

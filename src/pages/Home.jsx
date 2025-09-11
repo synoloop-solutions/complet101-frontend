@@ -8,6 +8,7 @@ import SafeGuard from "./SafeGuard";
 import ServicesHub from "./ServicesHub";
 import homeImage from "../assets/homeImg.png";
 import AgeVerification from "../components/AgeVerication";
+import ServicesOverview from "./Overview";
 import Navigation from "../components/Navigation";
 
 const Home = () => {
@@ -69,8 +70,8 @@ const Home = () => {
           setCurrentPage("home");
         }
         break;
-      case "overview":
-        setCurrentPage("overview");
+      case "serviceoverview":
+        setCurrentPage("serviceoverview");
         break;
       default:
         console.warn("Unknown navigation route:", href);
@@ -84,7 +85,9 @@ const Home = () => {
       case "underage":
         return <SafeGuard onGoBack={handleGoBackToHome} />;
       case "services":
-        return <ServicesHub onGoBack={handleGoBackToHome} />;
+        return <ServicesOverview onGoBack={handleGoBackToHome} />;
+      case "serviceoverview":
+        return <ServicesOverview onGoBack={handleGoBackToHome} />;
       case "home":
       default:
         return (

@@ -17,7 +17,7 @@ import styles from "./Heading.module.css";
  */
 
 const Heading = ({
-  children,
+  children, 
   level = "h1",
   size = "large",
   color = "primary",
