@@ -3,50 +3,57 @@ import styles from "./ServicesHub.module.css";
 import Heading from "../components/Heading";
 import Button from "../components/Button";
 import Navigation from "../components/Navigation";
+import {
+  FolderOpen,
+  Courthouse,
+  Star,
+  ArrowDown2,
+  ArrowRight,
+} from "iconsax-reactjs";
 
 const ServicesHub = ({ onGoBack, onNavigate }) => {
   const services = [
     {
       id: 1,
-      title: "Privacy Compliance",
+      title: "CompLet101™",
       description:
-        "Comprehensive GDPR and data protection compliance solutions to keep your business secure and legally compliant.",
-      icon: "🔒",
+        "Professional complaint submission and resolution services for individuals and organizations, ensuring a fair process.",
+      icon: <FolderOpen size="32" color="#2677b2" />,
       features: [
         "GDPR Assessment",
         "Policy Creation",
         "Training Programs",
         "Ongoing Support",
       ],
-      buttonText: "Learn More",
+      buttonText: "Start  CompLet101  Form",
     },
     {
       id: 2,
-      title: "Security Solutions",
+      title: "LocalLogic",
       description:
-        "Advanced security measures to protect your digital assets and maintain customer trust.",
-      icon: "🛡️",
+        "Specialized support for council-related complaints, local government compliance, and community advocacy, empowering local voices.",
+      icon: <Courthouse size="32" color="#2677b2" />,
       features: [
         "Security Audits",
         "Risk Assessment",
         "Implementation",
         "24/7 Monitoring",
       ],
-      buttonText: "Get Started",
+      buttonText: "Start  LocalLogic  Form",
     },
     {
       id: 3,
-      title: "Digital Transformation",
+      title: "UReady",
       description:
-        "Streamline your processes with our comprehensive digital transformation services.",
-      icon: "⚡",
+        "Comprehensive business support, formation guidance, and compliance assistance for entrepreneurs and startups to thrive securely.",
+      icon: <Star size="32" color="#2677b2" />,
       features: [
         "Process Automation",
         "System Integration",
         "Digital Strategy",
         "Performance Analytics",
       ],
-      buttonText: "Explore",
+      buttonText: "Start  UReady  Form",
     },
   ];
 
@@ -86,30 +93,20 @@ const ServicesHub = ({ onGoBack, onNavigate }) => {
       {/* Page Content */}
       <div className={styles.container}>
         <div className={styles.header}>
-          {/* <Button
-            variant="ghost"
-            size="small"
-            onClick={onGoBack}
-            className={styles.backButton}
-          >
-            ← Back to Home
-          </Button> */}
-
           <Heading
             level="h1"
             size="large"
-            color="primary"
+            color=""
             weight="bold"
             align="center"
-            marginBottom="16px"
           >
             Our Services
           </Heading>
 
-          <p className={styles.subtitle}>
+          {/* <p className={styles.subtitle}>
             Choose from our comprehensive range of services designed to empower
             your journey with trust and clarity.
-          </p>
+          </p> */}
         </div>
 
         <div className={styles.servicesGrid}>
@@ -118,31 +115,40 @@ const ServicesHub = ({ onGoBack, onNavigate }) => {
               <div className={styles.cardHeader}>
                 <div className={styles.iconContainer}>
                   <span className={styles.serviceIcon}>{service.icon}</span>
+                  <Heading
+                    level="h3"
+                    size="small"
+                    color="dark"
+                    weight="semibold"
+                    marginBottom="0"
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        width: "100%",
+                      }}
+                    >
+                      <span>{service.title}</span>
+                      <ArrowDown2 size="24" color="#171a1f" />
+                    </div>
+                  </Heading>
                 </div>
-
-                <Heading
-                  level="h3"
-                  size="small"
-                  color="dark"
-                  weight="semibold"
-                  marginBottom="12px"
-                >
-                  {service.title}
-                </Heading>
               </div>
 
               <p className={styles.serviceDescription}>{service.description}</p>
 
               <div className={styles.featuresSection}>
-                <h4 className={styles.featuresTitle}>Key Features:</h4>
-                <ul className={styles.featuresList}>
+                {/* <h4 className={styles.featuresTitle}>Key Features:</h4> */}
+                {/* <ul className={styles.featuresList}>
                   {service.features.map((feature, index) => (
                     <li key={index} className={styles.featureItem}>
                       <span className={styles.checkmark}>✓</span>
                       {feature}
                     </li>
                   ))}
-                </ul>
+                </ul> */}
               </div>
 
               <div className={styles.cardFooter}>
@@ -153,6 +159,8 @@ const ServicesHub = ({ onGoBack, onNavigate }) => {
                   className={styles.serviceButton}
                 >
                   {service.buttonText}
+
+                  <ArrowRight size="32" color="#FFFFFF" />
                 </Button>
               </div>
             </div>
