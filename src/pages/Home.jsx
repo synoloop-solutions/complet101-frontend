@@ -8,6 +8,7 @@ import SafeGuard from "./SafeGuard";
 import ServicesHub from "./ServicesHub";
 import homeImage from "../assets/homeImg.png";
 import AgeVerification from "../components/AgeVerication";
+import Navigation from "../components/Navigation";
 
 const Home = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -45,8 +46,36 @@ const Home = () => {
 
   // Handle "Go Back" action from SafeGuard and ServicesHub pages
   const handleGoBackToHome = () => {
+    console.log("Navigating back to Home");
     setCurrentPage("home");
     setUserAge(null);
+  };
+
+  // Handle navigation from nav items (NEW FUNCTION)
+  const handleNavigation = (href, label) => {
+    console.log("Navigating to:", href, label);
+
+    switch (href) {
+      case "home":
+        setCurrentPage("home");
+        break;
+      case "services":
+        // Only allow if user is verified as adult
+        if (userAge === "adult") {
+          setCurrentPage("services");
+        } else {
+          console.warn("Access to services requires age verification");
+          // Optionally redirect to home or show a message
+          setCurrentPage("home");
+        }
+        break;
+      case "overview":
+        setCurrentPage("overview");
+        break;
+      default:
+        console.warn("Unknown navigation route:", href);
+        setCurrentPage("home");
+    }
   };
 
   // Render different pages based on current state
