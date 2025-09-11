@@ -51,29 +51,35 @@ const AgeVerification = ({
     },
   ];
 
+  const handleAgeSelection = useCallback((selectedOption) => {
+    setSelectedAge(selectedOption);
+    setHasAttempted(false); // Reset attempt state when selection changes
+  }, []);
+
   const handleContinue = async () => {
+    setHasAttempted(true);
+
+    // Check if user has selected an age
+    if (!selectedAge) {
+      return; // Error will show due to showError logic
+    }
+
     setLoading(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    // Simulate API call or processing delay
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
     setLoading(false);
-    console.log("Continue clicked!");
+
+    // Route based on age selection
+    if (selectedAge.isAdult) {
+      // User is 18+ - call success callback
+      onAgeVerified?.(true);
+    } else {
+      // User is under 18 - call failure callback
+      onVerificationFailed?.(false);
+    }
   };
-
-  const handleAgeSelection = useCallback(
-    (selectedOption) => {
-      setSelectedAge(selectedOption);
-      setHasAttempted(true);
-
-      if (selectedOption.isAdult) {
-        // User is adult - call success callback
-        onAgeVerified?.(true);
-      } else {
-        // User is minor - call failure callback
-        onVerificationFailed?.(false);
-      }
-    },
-    [onAgeVerified, onVerificationFailed]
-  );
 
   const showError = hasAttempted && !selectedAge && !error;
   const showUnderageMessage = selectedAge && !selectedAge.isAdult;
@@ -96,9 +102,6 @@ const AgeVerification = ({
         >
           {messages.title}
         </Heading>
-        {/* <h2 id="age-verification-title" className={styles.title}>
-          {messages.title}
-        </h2> */}
 
         <p id="age-verification-description" className={styles.description}>
           {messages.description}
@@ -128,14 +131,16 @@ const AgeVerification = ({
             </div>
           )}
 
-          {/* Underage Message */}
+          {/* Underage warning Message */}
           {showUnderageMessage && (
             <div
-              className={styles.underageMessage}
+              className={styles.warningMessage}
               role="alert"
               aria-live="polite"
             >
-              <p>{messages.underageMessage}</p>
+              <p>
+                ⚠️ Please note: Our services require users to be 18 or older.
+              </p>
             </div>
           )}
         </div>
@@ -144,15 +149,18 @@ const AgeVerification = ({
           variant="primary"
           size="large"
           onClick={handleContinue}
-          loading={loading}
+          loading={loading || isLoading}
+          disabled={loading}
         >
           Continue
         </Button>
 
         {/* Loading State */}
-        {isLoading && (
+        {(isLoading || loading) && (
           <div className={styles.loading} role="status" aria-live="polite">
-            <span className={styles.loadingText}>Verifying...</span>
+            <span className={styles.loadingText}>
+              {loading ? "Processing..." : "Verifying..."}
+            </span>
           </div>
         )}
       </div>

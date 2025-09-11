@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
 // import ServicesOverview from "../pages/Overview";
+import SafeGuard from "../pages/SafeGuard";
+import ServicesHub from "../pages/ServicesHub";
 // import Form from '../pages/form';
 // import Contact from '../pages/contact';
 
@@ -10,12 +12,12 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/contact",
-    // element: <Contact />,
+    path: "/safeguard",
+    element: <SafeGuard />,
   },
   {
-    path: "/form",
-    // element: <Form />,
+    path: "/serviceshub",
+    element: <ServicesHub />,
   },
 ]);
 

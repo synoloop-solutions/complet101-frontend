@@ -1,0 +1,372 @@
+/* Mobile First - Base Styles (320px+) */
+.navigation {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 24px;
+  min-height: 60px;
+}
+
+/* Logo Section */
+.logoSection {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 18px;
+  transition: color 0.2s ease;
+}
+
+.logo:hover {
+  color: var(--primary-color);
+}
+
+.logoIcon {
+  width: 28px;
+  height: 28px;
+}
+
+.logoText {
+  font-style: italic;
+}
+
+/* Desktop Navigation - Hidden on Mobile */
+.desktopNav {
+  display: none;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 0;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.navLink:hover {
+  color: #374151;
+}
+
+.navLinkActive {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+/* .navLinkActive::after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--secondary-color);
+  border-radius: 1px;
+} */
+
+/* Back Button Desktop - Hidden on Mobile */
+.backButtonDesktop {
+  display: none;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  /*border: none; */
+  color: #171a1fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: 1px solid #dee1e6ff;
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.backButton:focus {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+/* Mobile Menu Section */
+.mobileMenuSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.backButtonMobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.backButtonMobile:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.backButtonMobile:focus {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+.mobileMenuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #374151;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.mobileMenuButton:hover {
+  background: #f3f4f6;
+}
+
+.mobileMenuButton:focus {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+/* Mobile Navigation Overlay */
+.mobileNavOverlay {
+  position: fixed;
+  top: 0px; /* Height of navigation */
+  left: 0;
+  right: 0;
+  height: calc(100vh); /* Full viewport height minus nav height */
+  overflow-y: auto;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 99;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobileNavContent {
+  padding: 16px;
+}
+
+.mobileNavList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobileNavItem {
+  width: 100%;
+}
+
+.mobileNavLink {
+  display: block;
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.mobileNavLink:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.mobileNavLinkActive {
+  color: var(--secondary-color);
+  background: #eff6ff;
+  font-weight: 600;
+}
+
+.mobileNavLinkActive:hover {
+  background: #dbeafe;
+}
+
+/* Mobile Navigation Backdrop */
+.mobileNavBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 98;
+  backdrop-filter: blur(2px);
+}
+
+/* Tablet Styles (768px+) */
+@media (min-width: 768px) {
+  .container {
+    padding: 16px 24px;
+    min-height: 70px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .logoIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logoImage {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+  }
+
+  /* Show desktop nav, hide mobile menu */
+  .desktopNav {
+    display: block;
+  }
+
+  .mobileMenuSection {
+    display: none;
+  }
+
+  /* Show desktop back button */
+  .backButtonDesktop {
+    display: block;
+  }
+
+  .navLink {
+    font-size: 15px;
+  }
+}
+
+/* Desktop Styles (1024px+) */
+@media (min-width: 1024px) {
+  .container {
+    padding: 16px 32px;
+    min-height: 72px;
+  }
+
+  .navList {
+    gap: 40px;
+  }
+
+  .navLink {
+    font-size: 16px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .logoIcon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Large Desktop Styles (1280px+) */
+@media (min-width: 1280px) {
+  .container {
+    padding: 16px 40px;
+  }
+
+  .navList {
+    gap: 48px;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .navLink,
+  .mobileNavLink,
+  .backButton,
+  .mobileMenuButton,
+  .logo {
+    transition: none;
+  }
+
+  .mobileNavOverlay {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .navigation {
+    border-bottom: 2px solid #000000;
+  }
+
+  /* .navLinkActive::after {
+    height: 3px;
+    background: #000000;
+  }
+
+  .mobileNavLinkActive {
+    border: 2px solid var(--secondary-color);
+  } */
+}

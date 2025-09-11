@@ -1,0 +1,147 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+.content {
+  max-width: 600px;
+  width: 100%;
+}
+
+.messageCard {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 1px solid #e0f2fe;
+}
+
+.iconContainer {
+  margin-bottom: 24px;
+}
+
+.icon {
+  font-size: 64px;
+  display: block;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.infoSection {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.infoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.infoList li {
+  padding: 8px 0;
+  padding-left: 24px;
+  position: relative;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.infoList li::before {
+  content: "•";
+  color: #2677b2;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.contactSection {
+  background: #fef3c7;
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 32px;
+}
+
+.contactText {
+  color: #92400e;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  text-align: left;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.footerText {
+  color: #6b7280;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  .messageCard {
+    padding: 24px;
+  }
+
+  .icon {
+    font-size: 48px;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+  }
+
+  .infoSection {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .messageCard {
+    padding: 20px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .sectionTitle {
+    font-size: 16px;
+  }
+}
