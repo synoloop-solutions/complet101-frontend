@@ -165,7 +165,8 @@
 .buttonText {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 25px;
+  /* justify-content: space-between; */
 }
 
 .buttonTextLoading {
