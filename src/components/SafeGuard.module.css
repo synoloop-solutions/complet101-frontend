@@ -1,0 +1,397 @@
+/* Mobile First - Base Styles (320px+) */
+.pageContainer {
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: "Lato", sans-serif;
+  padding: 40px 20px;
+}
+
+.contentWrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Header Section */
+.headerSection {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.iconContainer {
+  margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  color: #4285f4;
+}
+
+.mainTitle {
+  font-size: 28px;
+  font-weight: 400;
+  color: #333333;
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #666666;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Trusted Adult Guidance Section */
+.guidanceSection {
+  margin-bottom: 80px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 30px;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333333;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.textContent {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.paragraph {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+  text-align: left;
+}
+
+.paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Resources Section */
+.resourcesSection {
+  margin-bottom: 80px;
+}
+
+.resourcesTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333333;
+  margin: 0 0 40px 0;
+  text-align: center;
+}
+
+.resourceGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.resourceCard {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.2s ease;
+}
+
+.resourceCard:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333333;
+  margin: 0;
+}
+
+.externalIcon {
+  width: 16px;
+  height: 16px;
+  color: #4285f4;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.cardDescription {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.5;
+  margin: 0 0 12px 0;
+}
+
+.cardLink {
+  color: #4285f4;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cardLink:hover {
+  color: #3367d6;
+  text-decoration: underline;
+}
+
+/* Contact Section */
+.contactSection {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.contactTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333333;
+  margin: 0 0 20px 0;
+}
+
+.contactText {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.6;
+  margin: 0 0 30px 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+.contactButton {
+  background: #2677B2;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  min-width: 200px;
+}
+
+.contactButton:hover {
+  background: #1e5a8a;
+}
+
+.contactButton:focus {
+  outline: 2px solid #4285f4;
+  outline-offset: 2px;
+}
+
+/* Small Mobile (480px+) */
+@media (min-width: 480px) {
+  .pageContainer {
+    padding: 50px 30px;
+  }
+  
+  .icon {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .mainTitle {
+    font-size: 32px;
+  }
+  
+  .subtitle {
+    font-size: 17px;
+  }
+  
+  .paragraph {
+    font-size: 15px;
+  }
+  
+  .cardDescription {
+    font-size: 15px;
+  }
+}
+
+/* Tablet Styles (768px+) */
+@media (min-width: 768px) {
+  .pageContainer {
+    padding: 60px 40px;
+  }
+  
+  .headerSection {
+    margin-bottom: 80px;
+  }
+  
+  .icon {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .mainTitle {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+  }
+  
+  .sectionTitle {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+  
+  .resourcesTitle {
+    font-size: 22px;
+    margin-bottom: 50px;
+  }
+  
+  .resourceGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+  }
+  
+  .resourceCard {
+    padding: 24px;
+  }
+  
+  .cardTitle {
+    font-size: 17px;
+  }
+  
+  .paragraph {
+    font-size: 16px;
+    margin-bottom: 18px;
+  }
+  
+  .cardDescription {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .cardLink {
+    font-size: 15px;
+  }
+  
+  .contactTitle {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+  
+  .contactText {
+    font-size: 16px;
+    margin-bottom: 35px;
+  }
+  
+  .contactButton {
+    font-size: 15px;
+    padding: 14px 28px;
+  }
+}
+
+/* Desktop Styles (1024px+) */
+@media (min-width: 1024px) {
+  .pageContainer {
+    padding: 80px 50px;
+  }
+  
+  .headerSection {
+    margin-bottom: 100px;
+  }
+  
+  .icon {
+    width: 72px;
+    height: 72px;
+  }
+  
+  .mainTitle {
+    font-size: 40px;
+  }
+  
+  .guidanceSection {
+    margin-bottom: 100px;
+    padding: 40px;
+  }
+  
+  .resourcesSection {
+    margin-bottom: 100px;
+  }
+  
+  .resourceGrid {
+    gap: 50px;
+  }
+  
+  .resourceCard {
+    padding: 28px;
+  }
+  
+  .contactSection {
+    margin-top: 80px;
+  }
+}
+
+/* Large Desktop Styles (1280px+) */
+@media (min-width: 1280px) {
+  .pageContainer {
+    padding: 100px 60px;
+  }
+  
+  .contentWrapper {
+    max-width: 1000px;
+  }
+  
+  .icon {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .mainTitle {
+    font-size: 44px;
+  }
+  
+  .resourceCard {
+    padding: 32px;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .resourceCard,
+  .cardLink,
+  .contactButton {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .resourceCard {
+    border: 2px solid #000000;
+  }
+  
+  .contactButton {
+    border: 2px solid #000000;
+  }
+  
+  .cardLink {
+    text-decoration: underline;
+  }
+}
