@@ -8,8 +8,8 @@ import SafeGuard from "./SafeGuard";
 import ServicesHub from "./ServicesHub";
 import homeImage from "../assets/homeImg.png";
 import AgeVerification from "../components/AgeVerication";
-import ServicesOverview from "./Overview";
-import Navigation from "../components/Navigation";
+// import ServicesOverview from "./Overview";
+// import Navigation from "../components/Navigation";
 
 const Home = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -85,9 +85,9 @@ const Home = () => {
       case "underage":
         return <SafeGuard onGoBack={handleGoBackToHome} />;
       case "services":
-        return <ServicesOverview onGoBack={handleGoBackToHome} />;
-      case "serviceoverview":
-        return <ServicesOverview onGoBack={handleGoBackToHome} />;
+        return <ServicesHub onGoBack={handleGoBackToHome} />;
+      // case "serviceoverview":
+      //   return <ServicesOverview onGoBack={handleGoBackToHome} />;
       case "home":
       default:
         return (
