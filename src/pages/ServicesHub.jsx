@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./ServicesHub.module.css";
 import Heading from "../components/Heading";
 import Button from "../components/Button";
@@ -11,7 +11,13 @@ import {
   ArrowRight,
 } from "iconsax-reactjs";
 
-const ServicesHub = ({ onGoBack, onNavigate }) => {
+// Import From Form COmponents
+import CompLet101Form from "../components/forms/CompLet101Form";
+import LocalLogicForm from "../components/forms/LocalLogicForm";
+import UReadyForm from "../components/forms/UReadyForm";
+
+const ServicesHub = ({ onGoBack, onNavigate, onServiceSelect }) => {
+  const [selectedService, setSelectedService] = useState(null);
   const services = [
     {
       id: 1,
@@ -26,6 +32,7 @@ const ServicesHub = ({ onGoBack, onNavigate }) => {
         "Ongoing Support",
       ],
       buttonText: "Start  CompLet101  Form",
+      formComponent: "complet101",
     },
     {
       id: 2,
@@ -40,6 +47,7 @@ const ServicesHub = ({ onGoBack, onNavigate }) => {
         "24/7 Monitoring",
       ],
       buttonText: "Start  LocalLogic  Form",
+      formComponent: "locallogic",
     },
     {
       id: 3,
@@ -54,13 +62,27 @@ const ServicesHub = ({ onGoBack, onNavigate }) => {
         "Performance Analytics",
       ],
       buttonText: "Start  UReady  Form",
+      formComponent: "uready",
     },
   ];
 
   const handleServiceClick = (serviceId) => {
     console.log(`Service ${serviceId} clicked`);
     // Add your service-specific logic here
+    const service = services.find((s) => s.id === serviceId);
+    setSelectedService(service);
   };
+
+  const handleBackToServices = () => {
+    setSelectedService(null);
+  };
+
+  // Call the service selection handler from parent
+  // if (onServiceSelect && typeof onServiceSelect === "function") {
+  //   onServiceSelect(services);
+  // } else {
+  //   console.warn("onServiceSelect prop not provided or not a function");
+  // }
 
   // Navigation configuration for services page
   const navItems = [
@@ -79,6 +101,37 @@ const ServicesHub = ({ onGoBack, onNavigate }) => {
       console.warn("onNavigate prop not provided or not a function");
     }
   };
+
+  // If a service is selected, render the corresponding form.
+
+  if (selectedService) {
+    const renderForm = () => {
+      switch (selectedService.formComponent) {
+        case "complet101":
+          return <CompLet101Form onGoBack={handleBackToServices} />;
+        case "locallogic":
+          return <LocalLogicForm onGoBack={handleBackToServices} />;
+        case "uready":
+          return <UReadyForm onGoBack={handleBackToServices} />;
+        default:
+          return <p>Form not found for this service.</p>;
+      }
+    };
+
+    return (
+      <>
+        <Navigation
+          logoText="CompLet101"
+          navItems={navItems}
+          showBackButton={true}
+          onBackClick={onGoBack}
+          onNavClick={handleNavClick}
+        />
+
+        {renderForm()}
+      </>
+    );
+  }
 
   return (
     <>
@@ -102,11 +155,6 @@ const ServicesHub = ({ onGoBack, onNavigate }) => {
           >
             Our Services
           </Heading>
-
-          {/* <p className={styles.subtitle}>
-            Choose from our comprehensive range of services designed to empower
-            your journey with trust and clarity.
-          </p> */}
         </div>
 
         <div className={styles.servicesGrid}>
@@ -139,17 +187,19 @@ const ServicesHub = ({ onGoBack, onNavigate }) => {
 
               <p className={styles.serviceDescription}>{service.description}</p>
 
-              <div className={styles.featuresSection}>
-                {/* <h4 className={styles.featuresTitle}>Key Features:</h4> */}
-                {/* <ul className={styles.featuresList}>
+              {/* <div className={styles.featuresSection}>
+                 <h4 className={styles.featuresTitle}>Key Features:</h4> 
+             <ul className={styles.featuresList}>
                   {service.features.map((feature, index) => (
                     <li key={index} className={styles.featureItem}>
                       <span className={styles.checkmark}>✓</span>
                       {feature}
                     </li>
                   ))}
-                </ul> */}
-              </div>
+                </ul> 
+              </div>*/}
+
+              {/* Updated features section */}
 
               <div className={styles.cardFooter}>
                 <Button
@@ -181,6 +231,8 @@ const ServicesHub = ({ onGoBack, onNavigate }) => {
           </p>
         </div>
       </div>
+
+      {/* <CompLet101Form /> */}
     </>
   );
 };
